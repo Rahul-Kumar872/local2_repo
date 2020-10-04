@@ -1,0 +1,40 @@
+#content{
+  width:70%;
+  float:left;
+  margin-top: auto;
+  padding-top: 10px;
+  background:#50C781;
+  height:100%
+}
+
+#sidebar{
+  width:30%;
+  float:right;
+  padding-top: 10px;
+  background:#F5CF14;
+  height: 100%;
+}
+
+h1{
+  text-align:center;
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+}
+
+body{
+  color:white;
+  background:#50C781;
+}
+
+#date{
+  font-style:italic;
+}
+input[type="text"]{
+  background:blue;
+  color:white;
+}
+
+h3{
+  text-decoration: underline;
+  border-bottom: 2px solid cyan;
+}

@@ -1,0 +1,33 @@
+<!-- mysite/blog/templates/base.html -->
+
+{% load staticfiles %}
+{%load blog_tags%}
+<!DOCTYPE html>
+<html>
+<head>
+ <title>{% block title %}{% endblock %}</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+ crossorigin="anonymous">
+ <link href="{% static 'css/blog4.css' %}" rel="stylesheet">
+</head>
+<body>
+ <div id="content">
+   {% block content %}
+   {% endblock %}
+ </div>
+ <div id="sidebar">
+   <h2>Rahul's Blog</h2>
+     <p>Here You Can See Updations.</p>
+     <p>The total number of published posts upto today:<span id='pcount'>{%my_tag%}</span></p>
+     <h3>Latest Posts:</h3>{% show_latest_posts 100 %}
+     <h3>Most Commented Posts:</h3>
+     {%get_most_commented_posts as most_commented_posts%}
+     <ul>
+     {%for post in most_commented_posts %}
+     <li><a href="{{post.get_absolute_url}}"id="la">{{post.title}}</a></li>
+     {%endfor%}
+     </ul>
+ </div>
+</body>
+</html>
